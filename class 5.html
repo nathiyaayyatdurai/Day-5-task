@@ -1,0 +1,129 @@
+// 1. Do the below programs in anonymous function &amp; IIFE
+
+// a. Print odd numbers in an array
+(function(){
+   let a = [1,2,3,4,5,6];
+    console.log(a.filter(ele => ele%2!==0))
+})();
+
+
+// b. Convert all the strings to title caps in a string array
+(function(){
+    let name = 'sumanth hegde'
+    console.log(
+        name.split(" ")
+        .map(ele => ele[0].toUpperCase()+ele.substring(1))
+        .join(" ")
+        )
+})();
+
+// c. Sum of all numbers in an array
+(function(){
+    let a = [1,2,3,4,5,6]
+    console.log(a.reduce((total,ele)=>total+ele,0));
+})();
+
+
+// d. Return all the prime numbers in an array
+(function(){
+    let a=[1,2,3,4,5,6,7,8,9,11,13]
+    console.log(a.filter(ele => {
+        for(let i = 2 ; i<= Math.sqrt(ele) ; i++){
+            if(ele % i ==0)
+            return false;
+        }
+        return true;
+    }))
+})();
+
+
+// e. Return all the palindromes in an array
+(function(){
+    let a = 12321;
+    let temp = a.toString().split("");
+    console.log(pal());
+    function pal(){
+        for(let i = 0;i<temp.length/2;i++)
+    if(temp[i]!== temp[temp.length -1 - i]){
+        return false; 
+    }
+    return true;
+    }
+})();
+
+
+// g. Remove duplicates from an array
+(function(){
+    let arr = [1,2,3,4,2,1,6];
+    console.log(
+        arr.filter((ele,index)=> arr.indexOf(ele) === index)
+    );
+})();
+
+
+// h. Rotate an array by k times
+(function(){
+    let arr = [1,2,3,4,5]
+    let rot = 3;
+    while(rot>0){
+        arr.unshift(arr.pop());
+        rot--;
+    }
+    console.log(arr);
+})();
+
+
+
+
+
+
+
+
+
+// 3. Do the below programs in arrow functions
+// a. Print odd numbers in an array
+const oddNum = (arr)=>{
+    console.log(arr.filter(ele => ele%2!==0));
+};
+
+
+// b. Convert all the strings to title caps in a string array
+const titleCap = (name)=>{
+    console.log(
+        name.split(" ")
+        .map(ele => ele[0].toUpperCase()+ele.substring(1))
+        .join(" ")
+    );
+    
+};
+
+// c. Sum of all numbers in an array
+const sum = ()=>{
+    console.log(a.reduce((total,ele)=>total+ele,0));
+};
+
+
+// d. Return all the prime numbers in an array
+const prime = (arr)=>{
+    console.log(arr.filter(ele => {
+        for(let i = 2 ; i<= Math.sqrt(ele) ; i++){
+            if(ele % i ==0)
+            return false;
+        }
+        return true;
+    }));
+};
+
+
+// e. Return all the palindromes in an array
+const palandrom = (num)=>{
+    let temp = num.toString().split("");
+    console.log(pal());
+    function pal(){
+        for(let i = 0;i<temp.length/2;i++)
+    if(temp[i]!== temp[temp.length -1 - i]){
+        return false; 
+    }
+    return true;
+    }
+};
